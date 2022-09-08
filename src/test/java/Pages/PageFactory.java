@@ -1,35 +1,34 @@
 package Pages;
 
 import org.openqa.selenium.WebDriver;
-
 public class PageFactory {
     WebDriver driver;
     private UserLogin userLogin;
     private AdminPage adminPage;
     private AddUserDetail addUserDetail;
     private ApplyingForLeave applyingForLeave;
+    private AssigningLeaveToEmployee assigningLeaveToEmployee;
     public PageFactory(WebDriver driver)
     {
         this.driver=driver;
     }
-
-    public UserLogin getUserLogin() {
+    public UserLogin getUserLogin()
+    {
         if(userLogin==null)
         {
             userLogin = new UserLogin(driver);
         }
         return userLogin;
-    }
 
-    public AdminPage getAdminPage() {
+    }public AdminPage getAdminPage() {
         if(adminPage==null)
         {
             adminPage=new AdminPage(driver);
         }
         return adminPage;
     }
-
-    public AddUserDetail getAddUserDetail() {
+    public AddUserDetail getAddUserDetail()
+    {
         if(addUserDetail==null)
         {
             addUserDetail= new AddUserDetail(driver);
@@ -43,5 +42,13 @@ public class PageFactory {
             applyingForLeave=new ApplyingForLeave(driver);
         }
         return applyingForLeave;
+    }
+    public AssigningLeaveToEmployee getAssigningLeaveToEmployee()
+    {
+        if(assigningLeaveToEmployee==null)
+        {
+            assigningLeaveToEmployee=new AssigningLeaveToEmployee(driver);
+        }
+        return assigningLeaveToEmployee;
     }
 }

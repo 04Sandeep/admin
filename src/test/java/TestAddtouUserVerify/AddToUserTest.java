@@ -1,22 +1,21 @@
 package TestAddtouUserVerify;
 
 import org.testng.annotations.Test;
-
-public class AddToUserTest extends BaseClass {
-
+public class AddToUserTest extends BaseClass
+{
     @Test(priority = 1)
-    public void UserLogin() throws InterruptedException {
+    public void UserLogin()
+    {
         pageFactory.getUserLogin().userLogin();
     }
-
     @Test(priority = 2)
-    public void AdminPage() {
+    public void AdminPage()
+    {
         pageFactory.getAdminPage().adminPage();
     }
-
     @Test(priority = 3)
-    public void AddUserDetail() throws InterruptedException {
+    public void AddUserDetail()
+    {
         pageFactory.getAddUserDetail().addUserDetail();
-
     }
 }
