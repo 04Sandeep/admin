@@ -2,10 +2,9 @@ package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
 public class UserLogin
     {
-    static WebDriver driver;
+     WebDriver driver;
 
     By username = By.name("username");
     By password = By.name("password");

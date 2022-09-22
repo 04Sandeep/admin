@@ -1,9 +1,24 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Cases" verbose="1" >
-    <test name="Verify user is added">
-        <parameter name="testRunId" value="TCTC-1"/>
+    <test name="Verify user successfully login">
+        <parameter name="browserName" value="chrome"></parameter>
         <classes>
-            <class name="TestAddtouUserVerify.AssigningLeaveTest"/>
+            <class name=""/>
         </classes>
     </test>
+</suite>
+
+<test name="Verify admin is clickable">
+<parameter name="browserName" value="chrome"></parameter>
+<classes>
+    <class name="TestAddtouUserVerify.AdminTest"/>
+</classes>
+</test>
+
+<test name="Verifying user is successfully added">
+<parameter name="browserName" value="chrome"></parameter>
+<classes>
+    <class name="TestAddtouUserVerify.AddToUserTest"/>
+</classes>
+</test>
 </suite>

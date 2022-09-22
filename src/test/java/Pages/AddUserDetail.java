@@ -5,13 +5,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
-public class AddUserDetail {
+public class AddUserDetail
+{
     WebDriver driver;
     WebDriverWait wait;
 
     By userrole = By.xpath("(//div[@class='oxd-select-text oxd-select-text--active'])[1]");
     By employeename = By.xpath("(//div/input)[2]");
-    String uniquename;
     By status = By.xpath("(//div[@class='oxd-select-text oxd-select-text--active'])[2]");
     By username = By.xpath("(//div/input[@class='oxd-input oxd-input--active'])[2]");
     By password= By.xpath("(//div/input[@type='password'])[1]");
@@ -21,6 +21,8 @@ public class AddUserDetail {
     By userroleverify = By.xpath("//i[@class = 'oxd-icon bi-caret-down-fill oxd-select-text--arrow'])[1]");
     By adminverify = By.xpath("//*[contains(text(),'Admin')]");
     By searchverify = By.xpath("//button[@type='submit']");
+
+    String uniquename;
     public AddUserDetail(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -47,7 +49,6 @@ public class AddUserDetail {
         driver.findElement(userroleverify).click();
         driver.findElement(adminverify).click();
         driver.findElement(searchverify).click();
-        Thread.sleep(4000);
         boolean isAdminDisplayed = driver.findElement(By.xpath(String.format("//div[contains(text(),%s')]", uniquename))).isDisplayed();
         Assert.isTrue(isAdminDisplayed, "User is not added");
     }
